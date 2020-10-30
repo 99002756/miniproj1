@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="login-style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700&display=swap" rel="stylesheet">
+    <script>
+    function validate(){
+    var username=document.getElementById("username").value;
+    var password=document.getElementById("password").value;
+    if(username=="admin"&&password=="user"){
+        alert("Login successfull");
+        
+        return false;
+    }
+    else{
+        alert("Login failed");
+    }
+}
+    </script>
+</head>
+<body>
+    <main>
+        <div class="background">
+            <div class="text">
+                <h1>Login</h1>
+            </div>
+            <div class="box">
+                <form class="form" action="./main.html">
+                    <input type="text" class="username" placeholder="username" required>
+                    <input type="password" class="password" placeholder="Password" required>
+                   <!-- <input type="button" class="button" value="Login" onclick="validate()"> -->
+                   <input type="submit" onclick="validate()">
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
