@@ -7,20 +7,45 @@
     <title>Login</title>
     <link rel="stylesheet" href="login-style.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700&display=swap" rel="stylesheet">
-    <script>
-    function validate(){
-    var username=document.getElementById("username").value;
-    var password=document.getElementById("password").value;
-    if(username=="admin"&&password=="user"){
-        alert("Login successfull");
-        
-        return false;
-    }
-    else{
-        alert("Login failed");
-    }
+<script>
+//     function validate(){
+//     let uname=document.getElementById("loginUserName").value;
+//     let pass=document.getElementById("loginPassword").value;
+//     let data;
+//     const url="http://localhost:3333/search1";
+//     //alert(uname);
+//     $.get(url, (data)=>{
+//     let array = JSON.parse(data);
+//     console.log(array);
+//     for(var user in array){
+//     console.log(user);
+//     if(array[user].userName==uname && array[user].password==pass){
+//     alert("Login successful");
+//     window.open("/search");
+//  }
+//  }
+//  })
+// }
+function validate(){
+let uname=document.getElementById("userName").value;
+let pass=document.getElementById("password").value;
+let data;
+const url="http://localhost:1234/search1";
+    //alert(uname);
+    $.get(url, (data)=>{
+    let array = JSON.parse(data);
+    alert(array);
+    for(var user in array){
+    console.log(user);
+    if(array[user].name==uname && array[user].pwd==pass){
+    alert("Login successful");
+    window.open("/search");
+//window.open("movie.html");
+ }
+ }
+ })
 }
-    </script>
+</script>
 </head>
 <body>
     <main>
@@ -29,11 +54,11 @@
                 <h1>Login</h1>
             </div>
             <div class="box">
-                <form class="form" action="./search.html">
-                    <input type="text" class="username" placeholder="username" required>
-                    <input type="password" class="password" placeholder="Password" required>
-                   <!-- <input type="button" class="button" value="Login" onclick="validate()"> -->
-                   <input type="submit" onclick="validate()">
+                <form class="form">
+                    <input type="text" class="username" id="userName" placeholder="username" required>
+                    <input type="password" class="password" id="password" placeholder="Password" required>
+                   <!-- <input type="button" class="button" value="Login" onclick="validate()">  -->
+                   <input type="button" onclick="validate()" value="Submit"> 
                 </form>
             </div>
         </div>

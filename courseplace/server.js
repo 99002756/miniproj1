@@ -24,7 +24,19 @@ app.get("/users",(req,res)=>{
     data=JSON.stringify(users);
     //console.log(data)
     fs.writeFileSync('./donersdata.json', data)
+    res.send("course added successfully");
 })
+
+app.get("/search1", function(req, res)
+{
+    fillData();
+console.log(users);
+res.send(JSON.stringify(users));
+})   
+    
+
+
+    
 app.get("/searchByCourse", function(req, res)
 {
     var searchCourse = [];

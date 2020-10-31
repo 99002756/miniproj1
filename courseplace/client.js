@@ -9,7 +9,7 @@ app.get("/form.html", (req, res) => {
 app.get("/login.html", (req, res) => {
     res.sendFile(__dirname + "/login.html");
 })
-app.get("/search.html", (req, res) => {
+app.get("/search", (req, res) => {
     res.sendFile(__dirname + "/search.html");
 })
 app.listen(3333, () => {
